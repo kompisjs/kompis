@@ -11,11 +11,7 @@
     "kompis": "./build/cli.js"
   },
   "scripts": {
-    "build": "tsc",
-    "package": "pkg . --targets node14-macos-x64 --output kompis"
-  },
-  "pkg": {
-    "scripts": "build/**/*.js"
+    "build": "tsc"
   },
   "keywords": [
     "components",
@@ -33,7 +29,6 @@
   "devDependencies": {
     "@types/node": "^17.0.5",
     "@types/yargs": "^17.0.8",
-    "pkg": "^5.5.1",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.4"
   },
