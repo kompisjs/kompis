@@ -1,0 +1,44 @@
+{
+  "name": "kompis",
+  "version": "0.0.0",
+  "license": "MIT",
+  "description": "Kompis.js is an open source tool for developing React UI components in isolation",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kompisjs/kompis.git"
+  },
+  "bin": {
+    "kompis": "./build/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "package": "pkg . --targets node14-macos-x64 --output kompis"
+  },
+  "pkg": {
+    "scripts": "build/**/*.js"
+  },
+  "keywords": [
+    "components",
+    "documentation",
+    "frontend",
+    "kompis",
+    "kompisjs",
+    "react",
+    "reactjs",
+    "templated",
+    "tool",
+    "ui",
+    "user interface"
+  ],
+  "devDependencies": {
+    "@types/node": "^17.0.5",
+    "@types/yargs": "^17.0.8",
+    "pkg": "^5.5.1",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "chalk": "^5.0.0",
+    "yargs": "^17.3.1"
+  }
+}
