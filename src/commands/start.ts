@@ -31,21 +31,21 @@ export const handler = (argv: Arguments<Options>): void => {
   createHtmlFile();
 
   glob(path, {}, (err: Error, files: any) => {
+    console.log(files)
+
     if (err) {
       return process.exit(1)
     }
 
-    // This returns all files matchin path
-    // TODO: What to do now?
-    // build({
-    //   entryPoints: files,
-    //   outdir: "kompis/dist",
-    //   bundle: true,
-    //   format: "cjs",
-    //   loader: {".tsx": "tsx"},
-    //   watch: true
-    // })
-    //   .then(() => console.log("⚡ Done"))
-    //   .catch(() => process.exit(1));
+    build({
+      entryPoints: files,
+      outdir: "kompis/dist",
+      bundle: true,
+      format: "cjs",
+      loader: {".tsx": "tsx"},
+      watch: true
+    })
+      .then(() => console.log("⚡ Done"))
+      .catch(() => process.exit(1));
   })
 };
