@@ -1,17 +1,19 @@
 {
-  "name": "kompis",
+  "name": "kompis-workspace",
   "version": "0.0.0",
   "license": "MIT",
   "description": "Kompis.js is an open source tool for developing React UI components in isolation",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/kompisjs/kompis.git"
   },
-  "bin": {
-    "kompis": "./build/cli.js"
-  },
+  "workspaces": [
+    "exmaples/*"
+  ],
   "scripts": {
-    "build": "tsc"
+    "next": "yarn workspace @kompis/next-example",
+    "dev": "concurrently -n web 'yarn next dev'"
   },
   "keywords": [
     "components",
@@ -20,24 +22,11 @@
     "kompis",
     "kompisjs",
     "react",
-    "reactjs",
-    "templated",
-    "tool",
-    "ui",
-    "user interface"
+    "reactjs"
   ],
   "devDependencies": {
-    "@types/node": "^17.0.5",
-    "@types/yargs": "^17.0.8",
-    "ts-node": "^10.4.0",
-    "typescript": "^4.5.4"
-  },
-  "dependencies": {
-    "chalk": "^5.0.0",
-    "esbuild": "^0.14.9",
-    "glob": "^7.2.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "yargs": "^17.3.1"
+    "concurrently": "^6.5.1",
+    "eslint": "^8.4.1",
+    "prettier": "^2.5.1"
   }
 }
